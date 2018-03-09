@@ -24,6 +24,7 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.hazelcast:hazelcast")
-    compile("com.hazelcast:hazelcast-spring")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("com.hazelcast:hazelcast:3.9.3")
+    compile("com.hazelcast:hazelcast-spring:3.9.3")
 }

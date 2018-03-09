@@ -17,7 +17,7 @@ public class UserController {
     private UserInfoService userInfoService;
 
     @RequestMapping(value = "/{accountId}", method = RequestMethod.GET)
-    public UserInfo getUserInfoService(@PathVariable long accountId) {
+    public UserInfo getUserInfo(@PathVariable long accountId) {
         return userInfoService.getUserInfo(accountId);
     }
 }
