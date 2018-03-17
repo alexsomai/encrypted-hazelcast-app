@@ -8,7 +8,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
+apply plugin: 'spring-boot'
 
 jar {
     baseName = 'encrypted-hazelcast-cache'

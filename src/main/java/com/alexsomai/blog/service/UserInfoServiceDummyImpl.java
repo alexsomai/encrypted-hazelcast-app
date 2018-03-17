@@ -1,6 +1,6 @@
-package blog.alexsomai.com.service;
+package com.alexsomai.blog.service;
 
-import blog.alexsomai.com.model.UserInfo;
+import com.alexsomai.blog.model.UserInfo;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 

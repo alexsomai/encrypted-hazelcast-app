@@ -1,4 +1,4 @@
-package blog.alexsomai.com.controller;
+package com.alexsomai.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;

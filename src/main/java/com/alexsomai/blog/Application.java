@@ -1,6 +1,9 @@
-package blog.alexsomai.com;
+package com.alexsomai.blog;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.hazelcast.config.Config;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.spring.cache.HazelcastCacheManager;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,27 +11,32 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ImportResource;
 
 import java.util.Arrays;
 
 @SpringBootApplication
 @EnableCaching
-@ImportResource("classpath:config/cache.xml")
 public class Application {
-
-    @Autowired
-    private CacheManager cacheManager;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Bean
+    public CacheManager cacheManager(@Qualifier("hazelcastInstance") HazelcastInstance hazelcastInstance) {
+        return new HazelcastCacheManager(hazelcastInstance);
+    }
+
+    @Bean
+    public Config hazelcastConfig() {
+        return new Config();
+    }
+
+    @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println(("Using cache manager: " + cacheManager.getClass().getName()));
+            System.out.println(("Using cache manager: " + ctx.getBean("cacheManager").getClass().getName()));
 
             System.out.println("Let's inspect the beans provided by Spring Boot:");
 

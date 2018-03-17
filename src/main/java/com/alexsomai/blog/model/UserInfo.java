@@ -1,4 +1,4 @@
-package blog.alexsomai.com.model;
+package com.alexsomai.blog.model;
 
 import java.io.Serializable;
 
