@@ -1,9 +1,9 @@
 package com.alexsomai.blog;
 
+import com.alexsomai.blog.cache.EncryptedHazelcastCacheManager;
+import com.alexsomai.blog.crypto.CipherService;
 import com.hazelcast.config.Config;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.spring.cache.HazelcastCacheManager;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,8 +23,8 @@ public class Application {
     }
 
     @Bean
-    public CacheManager cacheManager(@Qualifier("hazelcastInstance") HazelcastInstance hazelcastInstance) {
-        return new HazelcastCacheManager(hazelcastInstance);
+    public CacheManager cacheManager(HazelcastInstance hazelcastInstance, CipherService cipherService) {
+        return new EncryptedHazelcastCacheManager(hazelcastInstance, cipherService);
     }
 
     @Bean

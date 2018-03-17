@@ -11,11 +11,11 @@ public class UserInfoServiceDummyImpl implements UserInfoService {
     @Cacheable("users")
     public UserInfo getUserInfo(long accountId) {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        return new UserInfo(1, "abc", "abc", "a", "b", "c");
+        return new UserInfo(accountId, "abc", "abc", "a", "b", "c");
     }
 }
