@@ -1,0 +1,18 @@
+[
+  {
+    "accountId": 1,
+    "username": "johnsnow",
+    "email": "johnsnow@gameofthrones.com",
+    "firstName": "John",
+    "lastName": "Snow",
+    "about": "I know nothing!"
+  },
+  {
+    "accountId": 2,
+    "username": "daenerys",
+    "email": "daenerys@gameofthrones.com",
+    "firstName": "Daenerys",
+    "lastName": "Targaryen",
+    "about": "I am the mother of dragons"
+  }
+]

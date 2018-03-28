@@ -10,7 +10,11 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.util.Assert;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -120,7 +124,6 @@ public class EncryptedHazelcastCacheManager implements CacheManager {
 
     /**
      * Set default cache value retrieval timeout. Applies to all caches, if not defined a cache specific timeout.
-     *
      * @param defaultReadTimeout default cache retrieval timeout in milliseconds. 0 or negative values disable timeout.
      */
     public void setDefaultReadTimeout(long defaultReadTimeout) {
@@ -137,9 +140,8 @@ public class EncryptedHazelcastCacheManager implements CacheManager {
 
     /**
      * Set the cache ead-timeout params
-     *
      * @param options cache read-timeout params, autowired by Spring automatically by getting value of
-     *                hazelcast.spring.cache.prop parameter
+     * hazelcast.spring.cache.prop parameter
      */
     @Autowired
     public void setCacheOptions(@Value("${" + CACHE_PROP + ":}") String options) {

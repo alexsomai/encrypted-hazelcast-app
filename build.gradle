@@ -28,4 +28,5 @@ dependencies {
     compile("com.hazelcast:hazelcast:3.9.3")
     compile("com.hazelcast:hazelcast-spring:3.9.3")
     compile("org.bouncycastle:bcprov-jdk15on:1.59")
+    compile("com.google.code.gson:gson:2.8.2")
 }

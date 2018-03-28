@@ -2,7 +2,7 @@ package com.alexsomai.blog.model;
 
 import java.io.Serializable;
 
-public class UserInfo implements Serializable {
+public class User implements Serializable {
 
     public final long accountId;
     public final String username;
@@ -11,7 +11,7 @@ public class UserInfo implements Serializable {
     public final String lastName;
     public final String about;
 
-    public UserInfo(long accountId, String username, String email, String firstName, String lastName, String about) {
+    public User(long accountId, String username, String email, String firstName, String lastName, String about) {
         this.accountId = accountId;
         this.username = username;
         this.email = email;
@@ -22,7 +22,7 @@ public class UserInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "UserInfo{" +
+        return "User{" +
                 "accountId=" + accountId +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
