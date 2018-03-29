@@ -90,4 +90,3 @@ public class CipherServiceImpl implements CipherService {
         return new String(Hex.encode(hashedBytes));
     }
 }
-
