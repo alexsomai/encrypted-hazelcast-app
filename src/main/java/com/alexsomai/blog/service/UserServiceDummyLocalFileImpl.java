@@ -1,5 +1,6 @@
 package com.alexsomai.blog.service;
 
+import com.alexsomai.blog.Application;
 import com.alexsomai.blog.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,7 +20,7 @@ public class UserServiceDummyLocalFileImpl implements UserService {
     private static final Gson GSON = new GsonBuilder().create();
 
     @Override
-    @Cacheable("users")
+    @Cacheable(Application.USERS_CACHE)
     public User getUser(long accountId) {
 
         // Exaggerate delay, to simulate making a slow query to DB
