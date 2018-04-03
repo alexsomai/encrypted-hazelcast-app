@@ -48,14 +48,14 @@ public class CipherServiceImpl implements CipherService {
     }
 
     @Override
-    public Object decrypt(String object) {
-        if (object == null) {
+    public Object decrypt(String data) {
+        if (data == null) {
             throw new NullPointerException("Cannot decrypt a null value");
         }
 
         PaddedBufferedBlockCipher bufferedBlockCipher = new PaddedBufferedBlockCipher(new CBCBlockCipher(new AESEngine()));
 
-        byte[] objectToDecrypt = Hex.decode(object);
+        byte[] objectToDecrypt = Hex.decode(data);
         if (objectToDecrypt.length % bufferedBlockCipher.getUnderlyingCipher().getBlockSize() > 0) {
             String message = MessageFormat.format("After decoding the encrypted object from Base64, " +
                     "the object should contain a number of bytes multiple of {0} and the size of the object in bytes" +

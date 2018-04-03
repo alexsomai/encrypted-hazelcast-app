@@ -2,9 +2,9 @@ package com.alexsomai.blog.crypto;
 
 public interface CipherService {
 
-    String encrypt(Object objectToEncrypt);
+    String encrypt(Object object);
 
-    Object decrypt(String objectToDecrypt);
+    Object decrypt(String data);
 
     String hash(Object object);
 }

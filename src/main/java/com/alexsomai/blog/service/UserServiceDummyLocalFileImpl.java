@@ -23,8 +23,8 @@ public class UserServiceDummyLocalFileImpl implements UserService {
     @Cacheable(Application.USERS_CACHE)
     public User getUser(long accountId) {
 
-        // Exaggerate delay, to simulate making a slow query to DB
-        // DO NOT TRY THIS AT HOME! (to be read production) :)
+        // Exaggerate delay, to simulate a slow query to DB
+        // Do not try this at home! (to be read production)
         sleep();
 
         InputStream fileURI = this.getClass().getClassLoader().getResourceAsStream(USERS_FILE);
@@ -38,7 +38,7 @@ public class UserServiceDummyLocalFileImpl implements UserService {
 
     private static void sleep() {
         try {
-            Thread.sleep((long) 3000);
+            Thread.sleep(3000);
         } catch (InterruptedException ignore) {
         }
     }

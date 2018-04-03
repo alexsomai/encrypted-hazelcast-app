@@ -13,6 +13,22 @@
     "email": "daenerys@gameofthrones.com",
     "firstName": "Daenerys",
     "lastName": "Targaryen",
-    "about": "I am the mother of dragons"
+    "about": "I'm the Mother of Dragons"
+  },
+  {
+    "accountId": 3,
+    "username": "sansastark",
+    "email": "sansastark@gameofthrones.com",
+    "firstName": "Sansa",
+    "lastName": "Stark",
+    "about": "I'm the Lady of Winterfell"
+  },
+  {
+    "accountId": 4,
+    "username": "tyrionlannister",
+    "email": "tyrionlannister@gameofthrones.com",
+    "firstName": "Tyrion",
+    "lastName": "Lannister",
+    "about": "A Lannister always pays his debts"
   }
 ]
