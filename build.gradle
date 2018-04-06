@@ -12,7 +12,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 jar {
-    baseName = 'encrypted-hazelcast-cache'
+    baseName = 'encrypted-hazelcast-app'
     version = '0.1.0'
 }
 

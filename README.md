@@ -6,5 +6,5 @@ It encrypts the data stored in memory by Hazelcast.
 ### Run locally
 
 ```
-./gradlew build && java -jar build/libs/encrypted-hazelcast-cache-0.1.0.jar
+./gradlew build && java -jar build/libs/encrypted-hazelcast-app.jar
 ```
