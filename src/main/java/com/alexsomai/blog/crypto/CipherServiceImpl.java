@@ -22,6 +22,18 @@ public class CipherServiceImpl implements CipherService {
     private String secretKey;
 
     @Override
+    public String hash(Object object) {
+        Digest digest = new SHA256Digest();
+
+        final byte[] clearBytes = SerializationUtil.serialize(object);
+        digest.update(clearBytes, 0, clearBytes.length);
+        final byte[] hashedBytes = new byte[digest.getDigestSize()];
+        digest.doFinal(hashedBytes, 0);
+
+        return new String(Hex.encode(hashedBytes));
+    }
+
+    @Override
     public String encrypt(Object object) {
         if (object == null) {
             throw new NullPointerException("Cannot encrypt a null value");
@@ -76,17 +88,5 @@ public class CipherServiceImpl implements CipherService {
         }
 
         return SerializationUtil.deserialize(originalTextBytes);
-    }
-
-    @Override
-    public String hash(Object object) {
-        Digest digest = new SHA256Digest();
-
-        final byte[] clearBytes = SerializationUtil.serialize(object);
-        digest.update(clearBytes, 0, clearBytes.length);
-        final byte[] hashedBytes = new byte[digest.getDigestSize()];
-        digest.doFinal(hashedBytes, 0);
-
-        return new String(Hex.encode(hashedBytes));
     }
 }
