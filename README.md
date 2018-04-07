@@ -9,19 +9,17 @@ Prerequisites:
  - Gradle
  - JDK 8
 
-Build project
-
+Build project:
 ```
 ./gradlew build
 ```
-Start the application:
 
+Start the application:
 ```
 java -jar build/libs/encrypted-hazelcast-app.jar
 ```
 
-Start the application on different port:
-
+Start the application on specific port:
 ```
 java -jar build/libs/encrypted-hazelcast-app.jar --server.port=8090
 ```
