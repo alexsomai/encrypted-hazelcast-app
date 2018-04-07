@@ -54,9 +54,8 @@ public class Application {
             .setMembers(Collections.singletonList("localhost"))
             .setEnabled(true);
 
-        MapConfig usersMapConfig = new MapConfig();
-
-        usersMapConfig.setName(USERS_CACHE)
+        MapConfig usersMapConfig = new MapConfig()
+            .setName(USERS_CACHE)
             .setTimeToLiveSeconds(600)
             .setEvictionPolicy(EvictionPolicy.LFU);
 
