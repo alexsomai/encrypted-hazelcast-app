@@ -1,6 +1,7 @@
 package com.alexsomai.blog.controller;
 
 
+import com.alexsomai.blog.Application;
 import com.alexsomai.blog.model.User;
 import com.alexsomai.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class UserController {
     @RequestMapping(value = "/cached", method = RequestMethod.GET)
     public Set<Map.Entry> getCachedUsers() {
         CacheManager cacheManager = (CacheManager) context.getBean("cacheManager");
-        Cache cache = cacheManager.getCache("users");
+        Cache cache = cacheManager.getCache(Application.USERS_CACHE);
         Field field = ReflectionUtils.findField(cache.getClass(), "map");
         ReflectionUtils.makeAccessible(field);
         Map map = (Map) ReflectionUtils.getField(field, cache);
