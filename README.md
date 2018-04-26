@@ -3,6 +3,8 @@
 Spring Boot application example that contains a custom implementation of the Hazelcast Cache Manager.
 It encrypts the in-memory data stored by Hazelcast.
 
+Step-by-step guide: https://medium.com/coders-do-read/how-to-implement-an-encrypted-distributed-cache-87be4e506f8e
+
 ### Run locally
 
 Prerequisites:
